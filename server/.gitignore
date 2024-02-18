@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+
+# Environment configuration files
+.env
+
+# IDE - Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional: Mac OS specific - Avoid DS_Store files
+.DS_Store
+
+# Optional: Windows specific - Avoid Thumbs.db files
+Thumbs.db
