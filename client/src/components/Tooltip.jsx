@@ -13,7 +13,7 @@ export const Tooltip = ({ children, content }) => {
         {children}
       </div>
       {isTooltipVisible && (
-        <div className="absolute bottom-full mb-2 px-3 py-1 bg-gray-900 text-dimWhite text-sm shadow-lg z-10 min-w-[300px]">
+        <div className="absolute bottom-full mb-2 p-3 bg-gray-900 text-dimWhite text-sm shadow-lg z-10 min-w-[300px]">
           {content}
         </div>
       )}

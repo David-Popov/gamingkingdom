@@ -5,75 +5,19 @@ import gameCover1 from '../assets/gameCover1.png'
 import Button from '../components/Button';
 import Tooltip from '../components/Tooltip';
 import CardCarousel from "../components/CardCarousel";
+import { Link } from "react-router-dom";
 
-const games = [
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-]
 
-const CarouselContainer = ({heading, tooltip}) => {
+
+const CarouselContainer = ({bg, games, heading, tooltip, btn_link}) => {
   return (
-    <div className="flex flex-row bg-tertiatry pt-4 h-[670px]">
-      <div className="flex flex-col items-center">
-        <div className="flex flex-row py-6 items-center mr-[40rem]">
-          <h1 className="text-white text-[32px] font-semibold pb-2 pr-2">
+    <div className={`flex flex-row bg-${bg} pt-4 h-[670px] justify-center`}>
+      <div className="flex flex-col items-center ">
+        <div className="flex flex-row py-6 w-[63%] items-start text-left">
+          <h1 className="text-white text-[32px] font-semibold pr-2">
             {heading}
           </h1>
-          <div>
+          <div className="">
             <Tooltip
               content={tooltip}
             >
@@ -83,11 +27,11 @@ const CarouselContainer = ({heading, tooltip}) => {
             </Tooltip>
           </div>
         </div>
-        <div className="pl-[22rem]">
+        <div className="flex items-center justify-center">
             <CardCarousel games={games} />
         </div>
-        <div className="ml-[24rem] mt-16">
-            <Button text="Show all" />
+        <div className="mt-16">
+            <Button text="Show all"><Link to={btn_link}></Link></Button>
         </div>
       </div>
     </div>
