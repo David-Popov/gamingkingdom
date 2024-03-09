@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  gamingkindom_api:
+    image: ${DOCKER_REGISTRY-}gamingkindomapi
+    container_name: "GamingKingdomApi"
+    build:
+      context: .
+      dockerfile: GamingKindom_API/Dockerfile
+    ports:
+    - "8080:8080"
+    - "8081:8081"
+    depends_on:
+      - db
+
+  db:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    hostname: "GamingKingdomDB"
+    container_name: "GamingKingdomDatabase"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "MyTopSecretPassword123"
+      MSSQL_DATA_DIR: /var/opt/mssql/data
+      MSSQL_TCP_PORT: 1433
+    ports:
+      - "1433:1433"
+    volumes:
+      - C:/container/data:/var/opt/mssql/data
+      - C:/container/logs:/var/opt/mssql/log
+      - C:/container/secrets:/var/opt/mssql/secrets
+
+volumes:
+  db-data:
+    driver: local
