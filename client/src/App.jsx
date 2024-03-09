@@ -1,33 +1,39 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import LoginPage from './pages/LoginPage'
+import RegisterPage from './pages/RegisterPage'
+import Footer from './components/Footer'
+import Navbar from './components/Navbar'
+import HeroCarousel from './components/HeroCarousel'
+import Recommended from './containers/Recommended'
+import CarouselContainer from './containers/CarouselContainer'
+import { games } from './utils/gameObj'
+import { WishlistProvider } from './contexts/WishlistContext'
+import FooterInApp from './components/FooterInApp'
+import Categories from './components/Categories'
+import Wishlist from './components/Wishlist'
+import LandingPage from './pages/LandingPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <WishlistProvider>
+        <Navbar />
+        <LandingPage />
+        {/* <HeroCarousel />
+        <Recommended />
+        <CarouselContainer bg='tertiatry' games={games} heading={'Top games'} tooltip={'Recommendations based on most purchased products by our users.'} btn_link={''} />
+        <CarouselContainer bg='secondary' games={games} heading={'Best Selling eGift Cards'} tooltip={'Recommendations based on most purchased products by our users.'} btn_link={''} />
+        <CarouselContainer bg='tertiatry' games={games} heading={'Best Selling Gift Cards'} tooltip={'Recommendations based on most purchased products by our users.'} btn_link={''} />
+        <CarouselContainer bg='secondary' games={games} heading={'Upcoming games'} tooltip={'Products available for pre-ordering selected by relevance.'} btn_link={''} />
+        <Categories /> */}
+        {/* <Wishlist /> */}
+        <FooterInApp />
+      </WishlistProvider>
+      {/* <LoginPage /> */}
+      {/* <RegisterPage /> */}
+      
+
     </>
   )
 }
