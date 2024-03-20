@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: ./client  
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+
+  backend:
+    depends_on:
+      - db  
+    build:
+      context: ./api/GamingKindom_API/ 
+      dockerfile: Dockerfile 
+    environment:
+    # - ASPNETCORE_ENVIRONMENT=Development
+    - ASPNETCORE_URLS=http://+:80
+    # - ASPNETCORE_Kestrel__Certificates__Default__Password=Pass@*****
+    # - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/dockerdemo.pfx
+    ports:
+    - "8081:80"
+    # - "8082:443"
+    volumes:
+    - ~/.aspnet/https:/https:ro
+
+  db:
+    image: "mcr.microsoft.com/mssql/server:2022-latest"
+    hostname: "GamingKingdomDB"
+    container_name: "GamingKingdomDatabase"
+    ports:
+      - "1433:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "MyTopSecretPassword123"
+      MSSQL_DATA_DIR: /var/opt/mssql/data
+      MSSQL_TCP_PORT: 1433
+    volumes:
+      - C:/container/data:/var/opt/mssql/data
+      - C:/container/logs:/var/opt/mssql/log
+      - C:/container/secrets:/var/opt/mssql/secrets
+
+volumes:
+  db-data:
+    driver: local
