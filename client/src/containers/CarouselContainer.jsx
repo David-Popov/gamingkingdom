@@ -1,7 +1,5 @@
 import React from "react";
 import { PiInfoLight } from "react-icons/pi";
-import GameCard from '../components/GameCard';
-import gameCover1 from '../assets/gameCover1.png'
 import Button from '../components/Button';
 import Tooltip from '../components/Tooltip';
 import CardCarousel from "../components/CardCarousel";

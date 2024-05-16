@@ -1,15 +1,12 @@
 import React from "react";
 import Footer from "../components/Footer";
-import eneba_logo from "../assets/eneba_logo.png";
+
 import { FaSteamSymbol, FaDiscord, FaTwitch, FaTwitter, FaFacebookF, FaApple } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 
 const LoginPage = () => {
   return (
     <>
-      <div className="bg-secondary md:bg-primary h-[10vh]">
-        <a href="#"><img src={eneba_logo} alt="Eneba" className="p-5" /></a>
-      </div>
       <div className="flex text-white bg-secondary md:bg-primary h-[75vh] sm:h-[80vh] justify-center items-center px-[3rem] sm-px[4rem]">
           <h1 className="hidden md:flex mb-5 text-[96px] font-bold text-left pr-[10rem] leading-[90px]">
             Hi!
@@ -65,7 +62,7 @@ const LoginPage = () => {
                 />
               </div>
 
-              <div class="mb-6">
+              <div className="mb-6">
                 <input
                   type="password"
                   className="w-full p-2 bg-tertiatry text-dimWhite"
@@ -90,7 +87,6 @@ const LoginPage = () => {
             </form>
           </div>
       </div>
-      <Footer />
     </>
   );
 };

@@ -17,13 +17,18 @@ export const WishlistProvider = ({children}) => {
     }, [wishlist]);
 
     const addToWishlist = (game) => {
+        // console.log("Before being added to wishlist:", game)
+
         if(!wishlist.find(item => item.id === game.id)) {
             setWishlist([...wishlist, game]);
         }
+        console.log("After being added to wishlist:", game)
+        // console.log('wishlist -->', wishlist);
     };
 
     const removeFromWishlist = (gameId) => {
         setWishlist(wishlist.filter(item => item.id !== gameId));
+        console.log('REMOVED FROM wishlist -->', wishlist);
     };
 
     return (
