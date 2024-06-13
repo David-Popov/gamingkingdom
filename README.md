@@ -1,4 +1,4 @@
 # gamingkingdom
 
-# Hero Carousel
-[HeroCarousel.mp4](client/src/assets/HeroCarousel.mp4)
+#Hero Carousel
+[![Demo CountPages alpha](https://share.gifyoutube.com/KzB6Gb.gif)](https://www.youtube.com/watch?v=Z2je-aJf9uc)
