@@ -1,39 +1,31 @@
-import { useState } from 'react'
 import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
-import HeroCarousel from './components/HeroCarousel'
-import Recommended from './containers/Recommended'
-import CarouselContainer from './containers/CarouselContainer'
-import { games } from './utils/gameObj'
 import { WishlistProvider } from './contexts/WishlistContext'
-import FooterInApp from './components/FooterInApp'
-import Categories from './components/Categories'
 import Wishlist from './components/Wishlist'
 import LandingPage from './pages/LandingPage'
+import CartPage from './pages/CartPage'
+import { Routes, Route } from 'react-router-dom'
+import MainLayout from './pages/layouts/MainLayout'
+import AuthLayout from './pages/layouts/AuthLayout'
+import ProductInfoPage from './pages/ProductInfoPage'
+import { CartProvider } from './contexts/CartContext'
 
 function App() {
 
   return (
     <>
-      <WishlistProvider>
-        <Navbar />
-        <LandingPage />
-        {/* <HeroCarousel />
-        <Recommended />
-        <CarouselContainer bg='tertiatry' games={games} heading={'Top games'} tooltip={'Recommendations based on most purchased products by our users.'} btn_link={''} />
-        <CarouselContainer bg='secondary' games={games} heading={'Best Selling eGift Cards'} tooltip={'Recommendations based on most purchased products by our users.'} btn_link={''} />
-        <CarouselContainer bg='tertiatry' games={games} heading={'Best Selling Gift Cards'} tooltip={'Recommendations based on most purchased products by our users.'} btn_link={''} />
-        <CarouselContainer bg='secondary' games={games} heading={'Upcoming games'} tooltip={'Products available for pre-ordering selected by relevance.'} btn_link={''} />
-        <Categories /> */}
-        {/* <Wishlist /> */}
-        <FooterInApp />
-      </WishlistProvider>
-      {/* <LoginPage /> */}
-      {/* <RegisterPage /> */}
-      
-
+      <CartProvider>
+        <WishlistProvider>       
+          <Routes>
+            <Route path="/" element={<MainLayout><LandingPage /></MainLayout>}/>
+            <Route path="cart" element={<MainLayout><CartPage /></MainLayout>}/>
+            <Route path="/wishlist" element={<MainLayout><Wishlist /></MainLayout>}/>
+            <Route path="/info" element={<MainLayout><ProductInfoPage /></MainLayout>}/>
+            <Route path="/login" element={<AuthLayout><LoginPage /></AuthLayout>}/>
+            <Route path="/register" element={<AuthLayout><RegisterPage /></AuthLayout>}/>
+          </Routes>    
+        </WishlistProvider>
+      </CartProvider>
     </>
   )
 }

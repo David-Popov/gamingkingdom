@@ -33,6 +33,7 @@ import gameCover1 from '../assets/gameCover1.png'
 
 export const games = [
     {
+        id: 1,
         cover: gameCover1,
         title: 'Evil Genius 2: World Domination Steam Key',
         region: 'LATIN AMERICA',
@@ -40,6 +41,15 @@ export const games = [
         likes: 19,
     },
     {
+        id: 2,
+        cover: gameCover1,
+        title: 'Serious Sam 2',
+        region: 'LATIN AMERICA',
+        price: '16.50',
+        likes: 19,
+    },
+    {
+        id: 3,
         cover: gameCover1,
         title: 'Evil Genius 2: World Domination Steam Key',
         region: 'LATIN AMERICA',
@@ -47,6 +57,7 @@ export const games = [
         likes: 19,
     },
     {
+        id: 4,
         cover: gameCover1,
         title: 'Evil Genius 2: World Domination Steam Key',
         region: 'LATIN AMERICA',
@@ -54,6 +65,7 @@ export const games = [
         likes: 19,
     },
     {
+        id: 5,
         cover: gameCover1,
         title: 'Evil Genius 2: World Domination Steam Key',
         region: 'LATIN AMERICA',
@@ -61,6 +73,7 @@ export const games = [
         likes: 19,
     },
     {
+        id: 6,
         cover: gameCover1,
         title: 'Evil Genius 2: World Domination Steam Key',
         region: 'LATIN AMERICA',
@@ -68,6 +81,7 @@ export const games = [
         likes: 19,
     },
     {
+        id: 7,
         cover: gameCover1,
         title: 'Evil Genius 2: World Domination Steam Key',
         region: 'LATIN AMERICA',
@@ -75,13 +89,7 @@ export const games = [
         likes: 19,
     },
     {
-        cover: gameCover1,
-        title: 'Evil Genius 2: World Domination Steam Key',
-        region: 'LATIN AMERICA',
-        price: '16.50',
-        likes: 19,
-    },
-    {
+        id: 8,
         cover: gameCover1,
         title: 'Evil Genius 2: World Domination Steam Key',
         region: 'LATIN AMERICA',

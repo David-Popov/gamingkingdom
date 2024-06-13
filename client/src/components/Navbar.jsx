@@ -1,17 +1,20 @@
 import React from "react";
 import NavDropdown from "./NavDropdown";
-import eneba_logo from "../assets/eneba_logo.png";
+import eneba_logo_2 from "../assets/eneba_logo_2.png";
 import { CiSearch, CiHeart } from "react-icons/ci";
 import { PiShoppingCart } from "react-icons/pi";
 import { MdPersonOutline } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  let navigate = useNavigate();
+
   return (
     <div className="flex flex-col items-center bg-secondary">
       <nav className="flex flex-row max-w-[1300px] bg-secondary p-5 items-center justify-between">
-        <a href="#" className="display-block ml-10 px-2">
-          <img src={eneba_logo} alt="Eneba" />
-        </a>
+        <div className="display-block ml-10 px-2 cursor-pointer">
+          <img src={eneba_logo_2} alt="Eneba" onClick={() => navigate('/')}/>
+        </div>
         <span className="flex flex-row border-solid border-[1px] py-2 border-white mx-4">
           <span className="px-2  text-[35px] text-dimWhite">
             <CiSearch />
@@ -19,31 +22,31 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className="text-[24px] font-semibold bg-secondary w-[400px]"
+            className="text-[24px] text-white font-semibold bg-secondary w-[400px]"
           />
         </span>
         <p className="items-center text-white hover:text-ducklingYellow cursor-pointer mr-8">
           English EU | EUR
         </p>
         <ul className="flex flex-row text-[35px] text-white px-2">
-          <li className="mr-4 cursor-pointer hover:text-ducklingYellow">
+          <li className="mr-4 cursor-pointer hover:text-ducklingYellow" onClick={() => navigate('/wishlist')}>
             <CiHeart />
           </li>
-          <li className="mr-6 cursor-pointer hover:text-ducklingYellow">
+          <li className="mr-6 cursor-pointer hover:text-ducklingYellow" onClick={() => navigate('/cart')}>
             <PiShoppingCart />
           </li>
           <li className="flex flex-row mr-2 items-center">
-            <p className="flex flex-row items-center hover:text-ducklingYellow">
+            <div className="flex flex-row items-center hover:text-ducklingYellow cursor-pointer" onClick={() => navigate('/login')}>
               <MdPersonOutline />
-              <a href="#" className="text-[18px] ml-1">
+              <div className="text-[18px] ml-1">
                 Log in
-              </a>
-            </p>
+              </div>
+            </div>
 
-            <p className="text-[18px] px-1">|</p>
-            <a href="#" className="text-[18px] hover:text-ducklingYellow">
+            <div className="text-[18px] px-1">|</div>
+            <div className="text-[18px] hover:text-ducklingYellow cursor-pointer" onClick={() => navigate('/register')}>
               Register
-            </a>
+            </div>
           </li>
         </ul>
       </nav>
