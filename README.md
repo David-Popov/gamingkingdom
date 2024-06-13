@@ -1,6 +1,6 @@
 # gamingkingdom
-
-![Hero-Carousel](client/src/assets/Carousel1.jpg)
+#Previews
+![Hero-Carousel](client/src/assets/Carousel.jpg)
 ![Hero-Carousel-Change-Picture](client/src/assets/Carousel2.jpg)
 ![Top-Games](client/src/assets/TopGames1.jpg)
 ![Wishlisted](client/src/assets/TopGames2.jpg)
