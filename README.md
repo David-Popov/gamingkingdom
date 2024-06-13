@@ -1,3 +1,3 @@
 # gamingkingdom
 
-![Hero-Carousel](../_asset/hcimg1.png)
+![Hero-Carousel](client/src/assets/hcimg1.png)
