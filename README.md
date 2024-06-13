@@ -1,4 +1,4 @@
 # gamingkingdom
 
 #Hero Carousel
-<video src='client/src/assets/HeroCarousel.mp4' width=180></video>
+<img src="https://imgur.com/a/2DWNn9G" style=" width:1920px ; height:1080px " />
